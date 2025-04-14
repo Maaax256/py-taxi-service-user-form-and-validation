@@ -14,7 +14,7 @@ def validate_license_number(license_number: str) -> str:
     if license_number[:3] != license_number[:3].upper() \
             or not license_number[:3].isalpha():
         raise forms.ValidationError("First 3 characters must "
-                                    "be lowercase letters.")
+                                    "be uppercase letters.")
     if not license_number[3:].isdigit():
         raise forms.ValidationError("Last 5 characters must be digits.")
     return license_number
